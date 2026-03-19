@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, interval, map } from 'rxjs';
-import { StockInter } from '@real-time-stock/domain';
+import { Stock } from '@real-time-stock/domain';
 
 const STOCKS = ['AAPL', 'GOOGL', 'MSFT', 'TSLA'] as const;
 
 @Injectable({ providedIn: 'root' })
 export class MockStockFeedAdapter {
-  getPrices(): Observable<StockInter[]> {
+  getPrices(): Observable<Stock[]> {
     return interval(2000).pipe(
       map(() =>
         STOCKS.map(symbol => {

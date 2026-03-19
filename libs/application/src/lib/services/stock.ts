@@ -1,15 +1,15 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { StockInter } from '@real-time-stock/domain';
-import { StockFeedAdapter } from '@real-time-stock/infrastructure';
+import { Stock } from '@real-time-stock/domain';
+import { StockFeedPort } from '../ports/stock-feed.port';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Stock {
-  private feed = inject(StockFeedAdapter);
+export class StockService {
+  private feed = inject(StockFeedPort);
 
-  getStocks(): Observable<StockInter[]> {
+  getStocks(): Observable<Stock[]> {
     return this.feed.getPrices();
   }
 }

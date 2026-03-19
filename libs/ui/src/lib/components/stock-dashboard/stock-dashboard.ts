@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { Stock } from '@real-time-stock/application';
+import { StockService } from '@real-time-stock/application';
 import { StockCardComponent } from '../stock-card/stock-card';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -21,7 +21,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrls: ['./stock-dashboard.scss']
 })
 export class StockDashboardComponent {
-  private service = inject(Stock);
+  private service = inject(StockService);
   readonly stocks = toSignal(this.service.getStocks(), { initialValue: [] });
 
   enabled = signal<Record<string, boolean>>({

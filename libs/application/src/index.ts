@@ -6,4 +6,4 @@ export { StockFeedPort } from './lib/ports/stock-feed.port';
 /**
  ** Services
 */
-export { Stock } from './lib/services/stock';
+export { StockService } from './lib/services/stock';

@@ -1,6 +1,6 @@
 import { Component, signal, input, model, output, effect, ChangeDetectionStrategy } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { StockInter } from '@real-time-stock/domain';
+import { Stock } from "@real-time-stock/domain";
 
 @Component({
   selector: 'ui-stock-card',
@@ -11,7 +11,7 @@ import { StockInter } from '@real-time-stock/domain';
   styleUrl: './stock-card.scss',
 })
 export class StockCardComponent {
-  stock = input.required<StockInter>();
+  stock = input.required<Stock>();
   enabled = model(true, { alias: 'enabledInput' });
   enabledChange = output<boolean>();
   direction = signal<'up' | 'down' | 'none'>('none');
