@@ -23,7 +23,8 @@
           }
         ],
         "styles": [
-          "src/styles.scss"
+          "src/styles.scss",
+          "src/styles/_variables.scss"
         ],
         "outputPath": "dist/real-time-stock"
       },

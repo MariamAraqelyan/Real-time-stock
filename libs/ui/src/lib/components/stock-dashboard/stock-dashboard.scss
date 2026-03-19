@@ -1,25 +1,6 @@
-// .grid {
-//     display: grid;
-//     gap: 1rem;
-//     padding: 1rem;
-// }
-
-// @media (min-width: 768px) {
-//     .grid {
-//         grid-template-columns: repeat(4, minmax(0, 1fr));
-//     }
-// }
-
-// @media (max-width: 767px) {
-//     .grid {
-//         grid-template-columns: repeat(2, minmax(0, 1fr));
-//     }
-// }
-
-
 .grid {
   display: grid;
-  gap: 1.5rem; // Increased gap for a cleaner look
+  gap: 1.5rem;
   padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;

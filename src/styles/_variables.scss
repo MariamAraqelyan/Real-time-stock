@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #2c3e50;
+
+  --color-stock-up: #2ecc71;
+  --color-stock-up-dark: #27ae60;
+  
+  --color-stock-down: #e74c3c;
+  --color-stock-down-dark: #c0392b;
+  
+  --color-stock-off: #ecf0f1;
+  --color-stock-off-text: #7f8c8d;
+  --color-stock-off-border: #bdc3c7;
+  --color-surface-dark: #424242;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bg-main: #f4f7f6;
+  --color-text-main: #2c3e50;
+  --color-text-muted: #95a5a6;
+
+  /* --- Shadows & UI --- */
+  --color-button-overlay: rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+}
