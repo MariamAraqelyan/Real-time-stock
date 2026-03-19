@@ -1,12 +1,13 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { Stock } from '@real-time-stock/application';
-import { StockInter } from '@real-time-stock/domain';
 import { StockCardComponent } from '../stock-card/stock-card';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'ui-stock-dashboard',
   standalone: true,
   imports: [StockCardComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="grid">
       @for(stock of stocks(); track stock.symbol) {
@@ -21,8 +22,7 @@ import { StockCardComponent } from '../stock-card/stock-card';
 })
 export class StockDashboardComponent {
   private service = inject(Stock);
-
-  stocks = signal<StockInter[]>([]);
+  readonly stocks = toSignal(this.service.getStocks(), { initialValue: [] });
 
   enabled = signal<Record<string, boolean>>({
     AAPL: true,
@@ -36,13 +36,5 @@ export class StockDashboardComponent {
       ...state,
       [symbol]: value
     }))
-  }
-
-  constructor() {
-    effect(() => {
-      this.service.getStocks().subscribe(data => {
-        this.stocks.set(data);
-      })
-    })
   }
 }
