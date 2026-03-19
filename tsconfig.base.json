@@ -1,0 +1,17 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@real-time-stock/domain": ["libs/domain/src/index.ts"],
+      "@real-time-stock/infrastructure": ["libs/infrastructure/src/index.ts"],
+      "@real-time-stock/ui": ["libs/ui/src/index.ts"],
+      "@real-time-stock/application": ["libs/application/src/index.ts"]
+    }
+  }
+}

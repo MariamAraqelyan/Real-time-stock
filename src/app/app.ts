@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { StockDashboardComponent } from '@real-time-stock/ui';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  imports: [StockDashboardComponent],
+  template: `<ui-stock-dashboard/>`,
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('real-time-stock');
-}
+export class App {}

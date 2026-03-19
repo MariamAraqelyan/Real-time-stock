@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {},
+  "workspaceLayout": {
+    "libsDir": "libs"
+  },
+  "defaultBase": "master",
+  "analytics": true,
+  "generators": {
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "css"
+    }
+  }
+}

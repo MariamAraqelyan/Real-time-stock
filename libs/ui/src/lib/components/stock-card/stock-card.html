@@ -1,0 +1,28 @@
+<div
+    class="card"
+    [class.off]="!enabled()"
+    [class.up]="enabled() && direction() === 'up'"
+    [class.down]="enabled() && direction() === 'down'"
+>
+    <div class="header">
+    <h3>{{ stock.name }}</h3>
+    <span>{{ stock.symbol }}</span>
+    <button type="button" (click)="toggle($event)">
+        {{ enabled() ? 'ON' : 'OFF' }}
+    </button>
+    </div>
+
+    <div class="content mobile">
+    <div>Current: {{ stock.price | number:'1.2-2' }}</div>
+    <div>High: {{ stock.high | number:'1.2-2' }}</div>
+    <div>Low: {{ stock.low | number:'1.2-2' }}</div>
+    </div>
+
+    <div class="content desktop">
+    <div>Current: {{ stock.price | number:'1.2-2' }}</div>
+    <div>High: {{ stock.high | number:'1.2-2' }}</div>
+    <div>Low: {{ stock.low | number:'1.2-2' }}</div>
+    <div>52w High: {{ stock.weekHigh | number:'1.2-2' }}</div>
+    <div>52w Low: {{ stock.weekLow | number:'1.2-2' }}</div>
+    </div>
+</div>

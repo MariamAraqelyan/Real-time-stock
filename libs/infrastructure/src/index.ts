@@ -1,0 +1,1 @@
+export { StockFeedAdapter } from './lib/websocket/stock-feed.adapter';

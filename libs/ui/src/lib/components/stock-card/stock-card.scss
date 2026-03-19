@@ -1,0 +1,60 @@
+.card {
+    background-color: #424242;
+    border-radius: 8px;
+    padding: 1rem;
+    color: #fff;
+    transition: background-color 0.2s, opacity 0.2s;
+    cursor: pointer;
+
+    &.up {
+      background-color: #1b5e20;
+    }
+
+    &.down {
+      background-color: #b71c1c;
+    }
+
+    &.off {
+      background-color: #616161;
+      opacity: 0.7;
+    }
+  }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header button {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* mobile vs desktop content */
+.content.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .content.mobile {
+    display: none;
+  }
+  .content.desktop {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .content.mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
