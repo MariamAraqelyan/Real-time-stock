@@ -1,4 +1,4 @@
-<div
+<!-- <div
     class="card"
     [class.off]="!enabled()"
     [class.up]="direction() === 'up'"
@@ -25,4 +25,32 @@
     <div>52w High: {{ stock().weekHigh | number:'1.2-2' }}</div>
     <div>52w Low: {{ stock().weekLow | number:'1.2-2' }}</div>
     </div>
+</div> -->
+
+<div
+    class="card"
+    [class.off]="!enabled()"
+    [class.up]="direction() === 'up'"
+    [class.down]="direction() === 'down'"
+>
+    <div class="header">
+        <h3>{{ stock().symbol }}</h3>
+        <div class="price-main">${{ stock().price | number:'1.2-2' }}</div>
+    </div>
+
+    <div class="content mobile">
+        <div class="stat-row">High: {{ stock().high | number:'1.2-2' }}</div>
+        <div class="stat-row">Low: {{ stock().low | number:'1.2-2' }}</div>
+    </div>
+
+    <div class="content desktop">
+        <div class="stat-row">High: {{ stock().high | number:'1.2-2' }}</div>
+        <div class="stat-row">Low: {{ stock().low | number:'1.2-2' }}</div>
+        <div class="stat-row">52w H: {{ stock().weekHigh | number:'1.2-2' }}</div>
+        <div class="stat-row">52w L: {{ stock().weekLow | number:'1.2-2' }}</div>
+    </div>
+
+    <button type="button" (click)="toggle($event)">
+        {{ enabled() ? 'ON' : 'OFF' }}
+    </button>
 </div>

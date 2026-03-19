@@ -1,17 +1,38 @@
+// .grid {
+//     display: grid;
+//     gap: 1rem;
+//     padding: 1rem;
+// }
+
+// @media (min-width: 768px) {
+//     .grid {
+//         grid-template-columns: repeat(4, minmax(0, 1fr));
+//     }
+// }
+
+// @media (max-width: 767px) {
+//     .grid {
+//         grid-template-columns: repeat(2, minmax(0, 1fr));
+//     }
+// }
+
+
 .grid {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-}
+  display: grid;
+  gap: 1.5rem; // Increased gap for a cleaner look
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 
-@media (min-width: 768px) {
-    .grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-}
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-@media (max-width: 767px) {
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  @media (max-width: 1023px) and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
 }
